@@ -1,0 +1,18 @@
+Classes:
+Test:
+    Contiains the question and answer bank
+    Handles question output, answer input
+    Sends answers to the Proctor for validation and scoring
+
+Person:
+    Each individual test taker. Draws questions from the Test class, prompts the test class to score and tally the responses. Stores the responses and scores for each individual
+        For now: create a new instance per test taken (Person A taking 2 different tests would result in two objects created).
+        Later: Correlate tests taken by the same person and combine into the same person instance as two different tests e.g. PersonA instance has a score1 attribute, score2 attribute ... scoreN attribute for N test attempts
+
+Proctor:
+    Allows adding, removing, and modifying test questions/allowable answers
+    Receives answers from the Test class. Validates that the answer is allowed
+        If valid: Prompts the Test to ask next question
+        If invalid: Prompts Test class to output information saying the answer was invalid, asks the same question again
+        Breaks out of the test if the input is "QUIT" or "Q"
+
